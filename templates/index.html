@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Collector</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    .status { color: green; font-weight: bold; }
+    form { margin-top: 20px; }
+    input, textarea { display: block; margin: 10px 0; width: 300px; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Feedback Collector App</h2>
+  <p class="status">{{ db_status }}</p>
+  <form action="/submit" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    
+    <label>Feedback:</label>
+    <textarea name="feedback" required></textarea>
+    
+    <button type="submit">Submit Feedback</button>
+  </form>
+</body>
+</html>
