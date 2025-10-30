@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
 import pymysql
 from os import environ as env
+import os
+from dotenv import load_dotenv
+
+load_dotenv("/opt/flaskapp/.env")
 
 app = Flask(__name__)
 

@@ -1,2 +1,4 @@
-Flask==3.0.3
-PyMySQL==1.1.1
+Flask==2.2.5
+pymysql
+boto3
+python-dotenv
