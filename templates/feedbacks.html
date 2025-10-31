@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Feedbacks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px #bbb;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            background-color: #014305;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .back-btn {
+            background-color: #6a7b70;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .back-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Feedbacks Submitted</h2>
+    <a href="/" class="back-btn">← Back to Home</a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Feedback</th>
+        </tr>
+        {% for fb in feedbacks %}
+        <tr>
+            <td>{{ fb[0] }}</td>
+            <td>{{ fb[1] }}</td>
+            <td>{{ fb[2] }}</td>
+            <td>{{ fb[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -55,6 +55,17 @@ def submit():
     else:
         return "Database connection error!", 500
 
+@app.route('/feedbacks') 
+def feedbacks(): 
+    conn = get_db_connection() 
+    if conn: 
+        cursor = conn.cursor() 
+        cursor.execute("SELECT id, name, email, feedback FROM feedbacks") 
+        feedbacks = cursor.fetchall() 
+        conn.close() 
+        return render_template('feedbacks.html', feedbacks=feedbacks) 
+    else: 
+        return "Database connection failed!", 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

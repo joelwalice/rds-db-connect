@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Feedback Collector</title>
-  <style>
-    body { font-family: Arial; margin: 40px; }
-    .status { color: green; font-weight: bold; }
-    form { margin-top: 20px; }
-    input, textarea { display: block; margin: 10px 0; width: 300px; padding: 5px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            background-color: #fff;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #055301;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #184d0a;
+        }
+        .db-status {
+            margin-bottom: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <h2>Feedback Collector App</h2>
-  <p class="status">{{ db_status }}</p>
-  <form action="/submit" method="POST">
-    <label>Name:</label>
-    <input type="text" name="name" required>
-    
-    <label>Email:</label>
-    <input type="email" name="email" required>
-    
-    <label>Feedback:</label>
-    <textarea name="feedback" required></textarea>
-    
-    <button type="submit">Submit Feedback</button>
-  </form>
+    <h2>Submit Your Feedback</h2>
+    <div class="db-status">{{ db_status }}</div>
+
+    <form action="/submit" method="POST" style="width: 300px;">
+        <input type="text" name="name" placeholder="Enter your name" required><br>
+        <input type="email" name="email" placeholder="Enter your email" required><br>
+        <textarea name="feedback" rows="5" placeholder="Enter your feedback" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <br><br>
+    <a href="/feedbacks"><button>View Feedbacks</button></a>
 </body>
 </html>
